@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0; /* Set your desired background color */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Noruel A. Basa</h1>
+            <p>Web Developer</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>My Works</h2>
+
+        <!-- Add your project details here -->
+        <div class="project">
+            <h3>Css Projects</h3>
+            <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Define the styles for the circle */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: relative;
+            animation: moveCircle 4s infinite;
+        }
+
+        /* Define the keyframes for the animation */
+        @keyframes moveCircle {
+            0% {
+                left: 0;
+            }
+            50% {
+                left: 50%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Create the animated circle element -->
+    <div class="circle"></div>
+</body>
+</html>
+        </div>
+
+        <div class="project">
+            <h3>SVG Artwork</h3>
+            <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="30" fill="green">
+                  <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="3s" repeatCount="indefinite" />
+                </circle>
+              </svg>
+              
+              <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="30" height="30" fill="orange">
+                  <animateTransform attributeName="transform" type="scale" values="1;1.5;1" dur="2s" repeatCount="indefinite" />
+                </rect>
+              </svg>
+              
+              <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="50" cy="50" rx="30" ry="20" fill="purple">
+                  <animate attributeName="cy" values="50;150;50" dur="3s" repeatCount="indefinite" />
+                </ellipse>
+              </svg>
+              
+              <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="10,10 50,50 10,50" fill="red">
+                  <animate attributeName="fill" values="red;blue;green;red" dur="4s" repeatCount="indefinite" />
+                </polygon>
+              </svg>
+              
+        </div>
+
+        <div class="project">
+            <h3>Canvas Creation</h3>
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moving Circles Animation</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="movingCirclesCanvas" width="400" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById('movingCirclesCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const circle1 = {
+      x: 50,
+      y: canvas.height / 2,
+      radius: 20,
+      speed: 2,
+    };
+
+    const circle2 = {
+      x: 150,
+      y: canvas.height / 2,
+      radius: 20,
+      speed: -2,
+    };
+
+    function drawCircle(x, y, radius) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, 2 * Math.PI);
+      ctx.fillStyle = 'blue';
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function moveCircle(circle) {
+      circle.x += circle.speed;
+      if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+        circle.speed *= -1; // Reverse direction on reaching canvas edges
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      moveCircle(circle1);
+      moveCircle(circle2);
+
+      drawCircle(circle1.x, circle1.y, circle1.radius);
+      drawCircle(circle2.x, circle2.y, circle2.radius);
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
+</html>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Contact: noruelbasa13@gmail.com</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
